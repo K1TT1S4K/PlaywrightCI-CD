@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 var user_id;
 //การทดสอบ API Method GET
-test('Get User@get', async ({request}) => {
+test('Get User CI/CDCI/CD@get', async ({request}) => {
     //การส่ง api แบบ get และเก็บใส่ตัวแปร response
     const response = await request.get('https://reqres.in/api/user/2');
     // console.log(response)
@@ -12,7 +12,7 @@ test('Get User@get', async ({request}) => {
 });
 
 //การทดสอบ API Method POST
-test('Post User@post', async ({request}) => {
+test('Post UserCI/CD@post', async ({request}) => {
     //การส่ง api แบบ get และเก็บใส่ตัวแปร response
     const response = await request.post('https://reqres.in/api/user',{
         data:{"name": "morpheus","job": "leader"},
@@ -26,7 +26,7 @@ test('Post User@post', async ({request}) => {
 });
 
 //การทดสอบ API Method PUT
-test('Update User@put', async ({request}) => {
+test('Update UserCI/CD@put', async ({request}) => {
     //การส่ง api แบบ get และเก็บใส่ตัวแปร response
     const response = await request.put('https://reqres.in/api/user/' + user_id,
     {
@@ -38,7 +38,7 @@ test('Update User@put', async ({request}) => {
 });
 
 //การทดสอบ API Method DELETE
-test('Delete User@delete', async ({request}) => {
+test('Delete UserCI/CD@delete', async ({request}) => {
     //การส่ง api แบบ get และเก็บใส่ตัวแปร response
     const response = await request.delete('https://reqres.in/api/user/' + user_id);
     expect(response.status()).toBe(204)
